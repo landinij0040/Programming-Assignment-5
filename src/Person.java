@@ -9,9 +9,6 @@
  * 1) All users must have a first name, last name, date of birth, identification number, address, phone number, email, password, and savings account.
  */
 
-import java.io.FileWriter;
-import java.util.HashMap;
-
 public abstract class Person {
     private String firstName;
     private String lastName;
@@ -106,7 +103,7 @@ public abstract class Person {
         return DOB;
     }
 
-    /**
+    /**String
      * sets date of birth
      * @param DOB date of birth
      */

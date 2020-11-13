@@ -11,10 +11,7 @@
  */
 
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Comparator;
-import java.util.Scanner;
 
 /**
  * @author Yulianna Torres
@@ -34,7 +31,6 @@ import java.util.Scanner;
  */
 
 public class Customer extends Person {
-    private Scanner sc = new Scanner(System.in);
     private Checking checking;
     private Credit credit;
     private BankStatement bankStatement;
@@ -183,74 +179,9 @@ public class Customer extends Person {
     }
 
     /**
-     * Method that writes in a TXT file.
-     * @param Message message to be written
-     * @param writer file writer
-     */
-    private void log_Transactions(String Message, FileWriter writer){
-        try {
-            writer.write(Message);
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * Method that prints a message nicely
-     * @param Message message to be written
-     * @return line so next message is ready
-     */
-    private String getOption(String Message){
-        System.out.println(Message);
-        System.out.print("> ");
-        return sc.nextLine();
-    }
-
-    /**
-     * Method that retrieves an specific type of account
-     * @param Message message to be written
-     * @param ignore parts to be ignored
-     * @return account inquired
-     */
-    private Account getDest(String Message, String ignore){
-        String Option = getOption(Message);
-
-        if(Option.equals("Cr") ||  Option.equals("Credit") && !ignore.equals("ICr"))
-            return getCredit();
-        if(Option.equals("Ch") || Option.equals("Checking")  && !ignore.equals("ICh"))
-            return getChecking();
-        if(Option.equals("S") || Option.equals("Savings") && !ignore.equals("IS"))
-            return getSavings();
-
-        System.out.println("Option" + Option +" not found.");
-        return null;
-    }
-
-    /**
-     * Method that retrieves an specific type of account
-     * @param Option option chosen
-     * @param ignore parts of message to be ignored
-     * @return Account inquired
-     */
-    private Account getDest1(String Option, String ignore){
-
-        if(Option.equals("Cr") ||  Option.equals("Credit") && !ignore.equals("ICr"))
-            return getCredit();
-        if(Option.equals("Ch") || Option.equals("Checking")  && !ignore.equals("ICh"))
-            return getChecking();
-        if(Option.equals("S") || Option.equals("Savings") && !ignore.equals("IS"))
-            return getSavings();
-
-        System.out.println("Option" + Option +" not found.");
-        return null;
-    }
-
-    /**
      * Class used to order the users
      */
     public static class sort_by_id implements Comparator<Customer> {
-
         @Override
         public int compare(Customer o, Customer t1) {
             return Integer.valueOf(o.getIdentificationNum()).compareTo(t1.getIdentificationNum());

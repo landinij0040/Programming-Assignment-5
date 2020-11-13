@@ -55,13 +55,6 @@ public abstract class Account {
         this.balance = balance;
     }
 
-    /**
-     * Set Starting Balance
-     * @param balance balance
-     */
-    public void setStarting_Balance(float balance) {
-        balance = balance;
-    }
 
     /**
      * toString returns parameters as strings

@@ -12,7 +12,7 @@ public class Savings extends Account implements Printable{
 
     //Constructor
     /**
-     * constructor
+     * constructor:
      * @param account_Number savings account number
      * @param starting_Balance savings balance
      */

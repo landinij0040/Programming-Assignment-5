@@ -32,8 +32,6 @@ public class BankStatement {
         transaction.append("");
     }
 
-
-    // Setters and Getters
     /**
      * Set Starting Savings Balance
      * @param startingSavingsBalance starting savings balance
@@ -58,33 +56,6 @@ public class BankStatement {
         this.startingCreditBalance = startingCreditBalance;
     }
 
-
-    /**
-     * Get Starting Savings Balance
-     * @return starting savings balance
-     */
-    public String getStartingSavingsBalance(){
-        return startingSavingsBalance;
-    }
-
-    /**
-     * Get Starting Checkings Balance
-     * @return starting checkings balance
-     */
-    public String getStartingCheckingBalance(){
-        return startingCheckingsBalance;
-    }
-
-    /**
-     * Get Starting Credit Balance
-     * @return starting credit balance
-     */
-    public String getStartingCreditBalance(){
-        return startingCreditBalance;
-    }
-
-
-    //Methods
     /**
      * Append the Transaction
      * @param log log to be appended to transaction list
@@ -92,15 +63,6 @@ public class BankStatement {
     public void appendTransaction(String log){
         transaction.append(log + "\n");
     }
-
-    /**
-     * Get Transaction File
-     * @return list of transactions
-     */
-    public StringBuffer getTransaction(){
-        return transaction;
-    }
-
 
     //bank manager bank statement function
     /**
