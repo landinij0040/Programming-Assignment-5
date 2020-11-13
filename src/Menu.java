@@ -73,74 +73,72 @@ public class Menu{
         if(customer != null) {
             while (!Option.equals("8")) {
                 UI.normalUserMenu();
-
                 Option = UI.getOption();
-
                 switch (Option) {
                     case "1":     // Inquire From Account
-                        System.out.println("\nInquire from which account type? Please type in |Savings or Checking or Credit|  ");
+                        UI.print("\nInquire from which account type? Please type in |Savings or Checking or Credit|  ");
                         Option = UI.getOption();
                         transactionReader(customer.getFirstName(), customer.getLastName(), Option, "inquires","","","","",accounts );
                         break;
                     case "2":     // Deposit into an account
-                        System.out.println("\nDeposit to: Checking, Credit or Savings?");
+                        UI.print("\nDeposit to: Checking, Credit or Savings?");
                         Option = UI.getOption();
-                        System.out.println("\nHow much would you like to deposit?(Enter number)");
+                        UI.print("\nHow much would you like to deposit?(Enter number)");
                         String actionAmount = UI.getOption();
                         transactionReader("", "", "", "deposits", customer.getFirstName(), customer.getLastName(), Option, actionAmount, accounts);
                         break;
                     case "3":     // Withdraw From Account
-                        System.out.println("\nWhere would you like to withdraw money from? Please Type|Checking or Savings|");
+                        UI.print("\nWhere would you like to withdraw money from? Please Type|Checking or Savings|");
                         Option = UI.getOption();
-                        System.out.println("How much would you like to withdraw?(Enter number)");
+                        UI.print("How much would you like to withdraw?(Enter number)");
                         String amount = UI.getOption();
                         transactionReader(customer.getFirstName(), customer.getLastName(), Option, "withdraws", "","","",amount, accounts);
 
                         break;
                     case "4":     // Transfer
-                        System.out.println("Which account would you like to transfer from |Checking or Savings|");
+                        UI.print("Which account would you like to transfer from |Checking or Savings|");
                         Option = UI.getOption();
-                        System.out.println("Which account would you like to transfer to |Checking or Savings or Credit|");
+                        UI.print("Which account would you like to transfer to |Checking or Savings or Credit|");
                         String Option2 = UI.getOption();
-                        System.out.println("How much would you like to Transfer?(Enter number)");
+                        UI.print("How much would you like to Transfer?(Enter number)");
                         String amountTrans = UI.getOption();
                         transactionReader(customer.getFirstName(),customer.getLastName(), Option, "transfers", customer.getFirstName(), customer.getLastName(), Option2, amountTrans, accounts);
                         break;
                     case "5":    //  Pay Someone
-                        System.out.println("Please type which account you would like to pay from. Type|Checking or Savings|");
+                        UI.print("Please type which account you would like to pay from. Type|Checking or Savings|");
                         Option = UI.getOption();
 
-                        System.out.println("Please type the first name of the user that you would like to pay.");
+                        UI.print("Please type the first name of the user that you would like to pay.");
                         String payeeFirstName= UI.getOption();
 
-                        System.out.println("Please type the last name of the user that you would like to pay.");
+                        UI.print("Please type the last name of the user that you would like to pay.");
                         String payeeLastName = UI.getOption();
 
-                        System.out.println("Please Select the amount that you would like to pay");
+                        UI.print("Please Select the amount that you would like to pay");
                         String amountPay = UI.getOption();
                         transactionReader(customer.getFirstName(), customer.getLastName(), Option, "pays", payeeFirstName, payeeLastName, "Checking", amountPay, accounts);
                         break;
                     case "6":    //  Create Checking Account
                         if(customer.getChecking() != null)
-                            System.out.println("Already have a Checking account!");
+                            UI.print("Already have a Checking account!");
                         else {
                             customer.setChecking(new Checking(customer.getSavings().getAccount_Number() - 1000, 0));
-                            System.out.println("Checking account created, your Checking account is: " + customer.getChecking().getAccount_Number());
+                            UI.print("Checking account created, your Checking account is: " + customer.getChecking().getAccount_Number());
                         }
                         break;
                     case "7":    // Create Credit Account
                         if(customer.getCredit() != null)
-                            System.out.println("Already have a Credit account!");
+                            UI.print("Already have a Credit account!");
                         else {
                             customer.setCredit(new Credit(customer.getSavings().getAccount_Number() + 1000, 0));
-                            System.out.println("Credit account created, your Credit account is: " + customer.getCredit().getAccount_Number());
+                            UI.print("Credit account created, your Credit account is: " + customer.getCredit().getAccount_Number());
                         }
                         break;
                     case "8":    // Exit
-                        System.out.println("Goodbye!");
+                        UI.print("Goodbye!");
                         break;
                     default:     // Error
-                        System.out.println("Option not found!");
+                        UI.print("Option not found!");
                 }
             }
         }
@@ -153,11 +151,11 @@ public class Menu{
      * @return customer inquired about
      */
     public Customer getCustomerByEmailAndPassword(ArrayList<Customer> accounts){
-        System.out.println("\nPlease Enter Your Email");
+        UI.print("\nPlease Enter Your Email");
         String Option = UI.getOption();
         for(int i = 0; i < accounts.size(); i++){
             if(Option.equals(accounts.get(i).getEmail())) {
-                System.out.println("\nPlease Enter Your Password");
+                UI.print("\nPlease Enter Your Password");
                 String userPassword = UI.getOption();
                 if(userPassword.equals(accounts.get(i).getPassword())){
                     return accounts.get(i);
@@ -185,55 +183,55 @@ public class Menu{
 
             switch (Option){
                 case "1":            // Inquire account by name
-                    System.out.println("\nWho’s account would you like to inquire about?");
+                    UI.print("\nWho’s account would you like to inquire about?");
                     Option = UI.getOption();
                     customer = getCustomer(accounts, Option);
                     if(customer != null){
                         bankManager.print_customer_info(customer);
                     }else{
-                        System.out.println("Account not found");
+                        UI.print("Account not found");
                     }
                     break;
                 case "2":            // Inquire account by type/number
-                    System.out.println("\nWhat account type?");
+                    UI.print("\nWhat account type?");
                     Option = UI.getOption();
                     customer = getCustomer_Account(accounts, Option);
                     if(customer != null){
                         bankManager.print_customer_info(customer);
                     }else{
-                        System.out.println("Account not found");
+                        UI.print("Account not found");
                     }
                     break;
                 case "3":            // Inquire all accounts
-                    System.out.println("-------- All Accounts --------");
+                    UI.print("-------- All Accounts --------");
                     for (Customer account : accounts) {
                         bankManager.print_customer_info(account);
-                        System.out.println("---------------------------");
+                        UI.print("---------------------------");
                     }
                     break;
                 case "4":            // Create User
                     Customer newCustomer = bankManager.create_user(accounts);
                     if (newCustomer != null) {
                         accounts.add(newCustomer);
-                        System.out.println("User created!");
+                        UI.print("User created!");
                     }else{
-                        System.out.println("User not created");
+                        UI.print("User not created");
                     }
                     break;
                 case "5":             // Generate Bank Statement
-                    System.out.println("\nWho’s account would you like to generate a bank statement?");
+                    UI.print("\nWho’s account would you like to generate a bank statement?");
                     Option = UI.getOption();
                     customer = getCustomer(accounts, Option);
                     if(customer != null){
                        BankManager.generateBankStatement(customer,"Output/Bank Statements");
                     }else
-                        System.out.println("The user " + Option + " doesn't exists!");
+                        UI.print("The user " + Option + " doesn't exists!");
                     break;
                 case "6":             // Exit
-                    System.out.println("Goodbye!");
+                    UI.print("Goodbye!");
                     break;
                 default:               // Error
-                    System.out.println("Option not found!");
+                    UI.print("Option not found!");
 
             }
         }
@@ -249,7 +247,7 @@ public class Menu{
      * @return Customer: Personal Info
      */
     public Customer getCustomer_Account(ArrayList<Customer> accounts, String Option){
-        System.out.println("What is the account number?");
+        UI.print("What is the account number?");
         int type = UI.getOptionInt();
 
         for (Customer account : accounts) {
@@ -390,16 +388,16 @@ public class Menu{
         Account type = whatTypeOfAccount(customer,from);
         // Showing To user
         if(type instanceof Checking){      // Displaying Checking Account
-            System.out.println("CHECKINGS: " + ((Checking) type).printBalance());
+            UI.print("CHECKINGS: " + ((Checking) type).printBalance());
         }
         if(type instanceof Savings){       // Displaying Savings Account
-            System.out.println("SAVINGS:" + ((Savings) type).printBalance());
+            UI.print("SAVINGS:" + ((Savings) type).printBalance());
         }
         if(type instanceof Credit){        // Displaying Credit Account
-            System.out.println("CREDIT:" + ((Credit) type).printBalance());
+            UI.print("CREDIT:" + ((Credit) type).printBalance());
         }
         if(type == null){                  // Displaying that account was not made
-            System.out.println("NA");
+            UI.print("NA");
         }
 
         // Making String to log into User Transaction and Bank Transaction
@@ -463,11 +461,11 @@ public class Menu{
             String bankUserCSVOutput         // Output User CSV that has been updated
     ) {
         if (customer == null) {                    // customer was not found
-            System.out.println("Customer was not found");
+            UI.print("Customer was not found");
             return;
         }
         if (Float.parseFloat(actionAmount) < 0) { // action amount is negative
-            System.out.println("Can not transfer a negative amount");
+            UI.print("Can not transfer a negative amount");
             return;
         }
 
@@ -478,7 +476,7 @@ public class Menu{
         if ((fromType != null) && (whereType != null)) { // Has Both accounts
             if (fromType.get_Balance() >= Double.parseDouble(actionAmount)) {  // action amount is not bigger than from accounts balance
                 if ((whereType instanceof Credit) && ((-1 * whereType.get_Balance()) < Double.parseDouble(actionAmount))) { // if the where account is of type credit and the action amount exceeds the principle
-                    System.out.println("Action amount exceeds credit principle.");
+                    UI.print("Action amount exceeds credit principle.");
                     return;
                 }
                 // The String to put into the whole bank transaction log and individual account logs
@@ -505,9 +503,9 @@ public class Menu{
                         toWhere + " " +
                         actionAmount;
                 // Printing the log to the console
-                System.out.println(toLog);
+                UI.print(toLog);
                 // Printing the new balances
-                System.out.println(fromWhere + ": " + fromType.get_Balance());
+                UI.print(fromWhere + ": " + fromType.get_Balance());
                 // Logging the action to the whole bank transactions and the user transaction
                 log(customer, toLog, transactionLogDirectory);
 
@@ -518,7 +516,7 @@ public class Menu{
                 // Finding which accounts to update
                 // For the from balance
                 int fromCSV;
-                System.out.println(toWhere + ": " + whereType.get_Balance());
+                UI.print(toWhere + ": " + whereType.get_Balance());
                 // Assuming that you can to transfer from the credit account
                 if (fromType instanceof Savings) {
                     fromCSV = 9;
@@ -548,11 +546,11 @@ public class Menu{
                 rewriteCSV(oldString, newString, bankUserCSVOutput);
 
             } else { // action amount is bigger that from accounts balance
-                System.out.println("Amount exceeds " + fromWhere);
+                UI.print("Amount exceeds " + fromWhere);
                 return;
             }
         } else {    // One Or both accounts are missing
-            System.out.println("One of the accounts was not found");
+            UI.print("One of the accounts was not found");
             return;
         }
     }
@@ -576,12 +574,12 @@ public class Menu{
                            ) {
 
         if(customer == null){ // Customer is null
-            System.out.println("Customer was not found");
+            UI.print("Customer was not found");
             return;
         }
 
         if(Double.parseDouble(actionAmount) < 0){ // If Action amount is negative
-            System.out.println("Can not deposit a negative amount");
+            UI.print("Can not deposit a negative amount");
             return;
         }
 
@@ -590,13 +588,13 @@ public class Menu{
 
         // If account was not found
         if(type == null){
-            System.out.println("Account is not available");
+            UI.print("Account is not available");
             return;
         }
 
         // If the count is the credit account and the action amount exceeds the principle
         if((type instanceof Credit) && (-1 * type.get_Balance() < Float.parseFloat(actionAmount))){
-            System.out.println("Amount exceeds Principle");
+            UI.print("Amount exceeds Principle");
             return;
         }
         String toLog = "";
@@ -610,8 +608,8 @@ public class Menu{
                 actionAmount;
 
         // Printing log to console
-        System.out.println(toLog);
-        System.out.println(toWhere + " " + type.get_Balance());
+        UI.print(toLog);
+        UI.print(toWhere + " " + type.get_Balance());
         // logging
         log(customer,toLog, transactionLogDirectory);
         // Updating CSV
@@ -656,12 +654,12 @@ public class Menu{
     {
 
         if(customer == null){ // Customer is null
-            System.out.println("Customer was not found");
+            UI.print("Customer was not found");
             return;
         }
 
         if(Double.parseDouble(actionAmount) < 0){ // If Action amount is negative
-            System.out.println("Can not deposit a negative amount");
+            UI.print("Can not deposit a negative amount");
             return;
         }
 
@@ -670,13 +668,13 @@ public class Menu{
 
         // If account was not found
         if(type == null){
-            System.out.println("Account is not available");
+            UI.print("Account is not available");
             return;
         }
 
         // If Action amount is more than the account
         if(type.get_Balance() < Double.parseDouble(actionAmount)){
-            System.out.println("Amount exceeds account Balance");
+            UI.print("Amount exceeds account Balance");
             return;
         }
 
@@ -691,8 +689,8 @@ public class Menu{
                         actionAmount;
 
         // Printing log to console
-        System.out.println(toLog);
-        System.out.println(fromWhere + " " + type.get_Balance());
+        UI.print(toLog);
+        UI.print(fromWhere + " " + type.get_Balance());
         // logging
         log(customer,toLog, transactionLogDirectory);
         // Updating CSV
@@ -743,18 +741,18 @@ public class Menu{
     ){
         // Either Payer or Payee is not a customer
         if((customer1 == null) || (customer2 == null)){
-            System.out.println("Customer not found");
+            UI.print("Customer not found");
             return;
         }
 
         // Payer cannot pay themselves
         if(customer1 == customer2){
-            System.out.println("Customer can not pay themselves");
+            UI.print("Customer can not pay themselves");
             return;
         }
         // the action amount is negative
         if(Double.parseDouble(actionAmount) < 0){
-            System.out.println("Can not pay a negative amount");
+            UI.print("Can not pay a negative amount");
             return;
         }
         // getting the respective accounts
@@ -791,16 +789,16 @@ public class Menu{
                         actionAmount;
 
                 // printing the log to console
-                System.out.println(toLog);
+                UI.print(toLog);
 
                 // Printing new balances
                 // Printing payers new  balance
-                System.out.println(
+                UI.print(
                         customer1.getFirstName() + " "  +
                                 customer1.getLastName()  + " " +
                                 fromWhere + " " + fromType.get_Balance());
                 // Printing payees new balance
-                System.out.println(
+                UI.print(
                         customer2.getFirstName() + " " +
                                 customer2.getLastName()  + " " +
                                 toWhere + " " + whereType.get_Balance());
@@ -845,12 +843,12 @@ public class Menu{
 
 
             }else{// action amount is bigger than payers account
-                System.out.println("Amount exceeds " + fromWhere);
+                UI.print("Amount exceeds " + fromWhere);
                 return;
             }
 
         }else{ // One or both of the accounts were not found
-            System.out.println("One of the accounts was not found");
+            UI.print("One of the accounts was not found");
             return;
         }
 
@@ -945,7 +943,6 @@ public class Menu{
                         accounts
                 );
             }
-
         }catch(IOException e){
             System.out.println("Could not find file");
         }
