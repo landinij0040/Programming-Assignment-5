@@ -1,6 +1,6 @@
 /**
  * @author Yulianna Torres, Isaiah Landin
- * @since 11/09/2020
+ * @since 11/13/2020
  *
  * Class Description:
  * BankManager has all bank manager functionality.
@@ -9,6 +9,7 @@
  * 1) Bank manager creates new users
  * 2) Bank manager generates bank statements
  * 3) there is only one bank manager for the whole bank
+ * 4) There will never be an account number = 0
  */
 
 import java.io.*;
@@ -17,7 +18,11 @@ import java.util.List;
 
 public class BankManager {
     private static BankManager INSTANCE;
+    private int biggestSavingsAccountNum = 0;
+    private int biggestCheckingAccountNum = 0;
+    private int biggestCreditAccountNum = 0;
 
+    //Singleton constructor
     /**
      * returns instance of bank manager, singleton design pattern
      * @return instance of bank manager
@@ -27,6 +32,59 @@ public class BankManager {
             INSTANCE = new BankManager();
         }
         return INSTANCE;
+    }
+
+
+    //Setters/Getters
+    public void setBiggestSavingsAccountNum(int biggestSavingsAccountNum) {
+        this.biggestSavingsAccountNum = biggestSavingsAccountNum;
+    }
+
+    public void setBiggestCheckingAccountNum(int biggestCheckingAccountNum) {
+        this.biggestCheckingAccountNum = biggestCheckingAccountNum;
+    }
+
+    public void setBiggestCreditAccountNum(int biggestCreditAccountNum) {
+        this.biggestCreditAccountNum = biggestCreditAccountNum;
+    }
+
+    public int getBiggestSavingsAccountNum() {
+        return biggestSavingsAccountNum;
+    }
+
+    public int getBiggestCheckingAccountNum() {
+        return biggestCheckingAccountNum;
+    }
+
+    public int getBiggestCreditAccountNum() {
+        return biggestCreditAccountNum;
+    }
+
+
+    //Methods
+    /**
+     * setBiggestAccountNums finds the max account numbers for Savings, Checking, and Credit accounts and sets then to the BankManager parameters
+     * @param accounts list of accounts in bank system
+     */
+    public void setBiggestAccountNums(List<Customer> accounts){
+        //if biggest account num hasn't been 
+        if ((biggestSavingsAccountNum == 0) && (biggestCreditAccountNum == 0) && (biggestCheckingAccountNum == 0)){
+            //iterate through all accounts to find/set max account numbers
+            for (Customer account : accounts) {
+                //Savings account number
+                if (account.getSavings().getAccount_Number() > biggestSavingsAccountNum) {
+                    setBiggestSavingsAccountNum(account.getSavings().getAccount_Number());
+                }
+                //Checking account number
+                if (account.getChecking().getAccount_Number() > biggestCheckingAccountNum) {
+                    setBiggestCheckingAccountNum(account.getChecking().getAccount_Number());
+                }
+                //Credit account number
+                if (account.getCredit().getAccount_Number() > biggestCreditAccountNum) {
+                    setBiggestCreditAccountNum(account.getCredit().getAccount_Number());
+                }
+            }
+        }
     }
 
     /**
@@ -63,9 +121,10 @@ public class BankManager {
         System.out.println("------- Create User -------");
         System.out.println("First Name: ");
         user_data.add(UI.getOption());
+        //Check if last element in user_data is empty, if yes display error and return to bank manager menu to try again
         if (user_data.get(user_data.size() - 1).isEmpty()) {
             System.out.println("First name can't be empty");
-            return null;
+            return null;//returns to original bank manager menu
         }
         System.out.println("Last Name: ");
         user_data.add(UI.getOption());
@@ -88,12 +147,19 @@ public class BankManager {
             System.out.println("Date of Birth can't be empty");
             return null;
         }
-        System.out.println("Identification Number:");
+        System.out.println("Identification Number: (Ex: ##)");
         user_data.add(UI.getOption());
         if (user_data.get(user_data.size() - 1).isEmpty()) {
             System.out.println("Identification Number can't be empty");
             return null;
         }
+        try{
+            Integer.parseInt(user_data.get(user_data.size() - 1));
+        }catch (NumberFormatException e ){
+            System.out.println("identification number must be inputted as a number");
+            return null;
+        }
+
         System.out.println("Address: ");
         user_data.add(UI.getOption());
         if (user_data.get(user_data.size() - 1).isEmpty()) {
@@ -119,6 +185,10 @@ public class BankManager {
             return null;
         }
 
+        //-------Generating Accounts---------
+        //find/set biggest account numbers
+        setBiggestAccountNums(accounts);
+
         //Create Savings account
         System.out.println("Creating Savings account");
         Savings savings;
@@ -130,12 +200,6 @@ public class BankManager {
             return null;
         }
         savingsStartingBalance = user_data.get(user_data.size() - 1);
-        System.out.println("What is the Savings Account number?");
-        user_data.add(UI.getOption());
-        if (user_data.get(user_data.size() - 1).isEmpty()) {
-            System.out.println("Savings Account Number can't be empty");
-            return null;
-        }
 
         customer = new Customer(user_data.get(0),//first name
                 user_data.get(1),//last name
@@ -146,8 +210,11 @@ public class BankManager {
                 user_data.get(6),//email
                 user_data.get(7),//password
                 Float.parseFloat(user_data.get(8)),//Savings balance
-                Integer.parseInt(user_data.get(9)));//Savings account number
+                biggestSavingsAccountNum + 1);//Savings account number
         System.out.println("Savings was created successfully");
+        setBiggestSavingsAccountNum(customer.getSavings().getAccount_Number()); //set new biggest savings account number
+        System.out.println("Savings account number is now " + customer.getSavings().getAccount_Number());
+        //set a bank statement for the customer
         BankStatement bankStatement = new BankStatement(savingsStartingBalance);
         customer.setBankStatement(bankStatement);
 
@@ -156,12 +223,6 @@ public class BankManager {
         String option = UI.getOption();
         switch (option){
             case "y":
-                System.out.println("What is the Checking Account number?");
-                user_data.add(UI.getOption());
-                if (user_data.get(user_data.size() - 1).isEmpty()) {
-                    System.out.println("Checking Account number can't be empty");
-                    return null;
-                }
                 System.out.println("What is the Checking Account starting balance?");
                 user_data.add(UI.getOption());
                 if (user_data.get(user_data.size() - 1).isEmpty()) {
@@ -169,10 +230,12 @@ public class BankManager {
                     return null;
                 }
                 customer.getBankStatement().setStartingCheckingsBalance(user_data.get(user_data.size() - 1));
-                customer.createChecking(Integer.parseInt(user_data.get(user_data.size() - 2)), //Checking account number
-                        Float.parseFloat(user_data.get(user_data.size() - 1))); //checking account balance
-
+                //Create Checking Account
+                customer.createChecking(biggestCheckingAccountNum + 1, //Checking account number
+                                        Float.parseFloat(user_data.get(user_data.size() - 1))); //checking account balance
                 System.out.println("Checking account created");
+                setBiggestCheckingAccountNum(customer.getChecking().getAccount_Number()); //set new biggest checking account number
+                System.out.println("Checking account number is now " + customer.getChecking().getAccount_Number());
                 break;
             case "n":
                 System.out.println("Checking account not created");
@@ -187,12 +250,6 @@ public class BankManager {
         option = UI.getOption();
         switch (option){
             case "y":
-                System.out.println("What is the Credit Account number?");
-                user_data.add(UI.getOption());
-                if (user_data.get(user_data.size() - 1).isEmpty()) {
-                    System.out.println("Credit Account number can't be empty");
-                    return null;
-                }
                 System.out.println("What is the Credit Account starting balance?");
                 user_data.add(UI.getOption());
                 if (user_data.get(user_data.size() - 1).isEmpty()) {
@@ -206,11 +263,14 @@ public class BankManager {
                     System.out.println("Credit max can't be empty");
                     return null;
                 }
-                customer.createCredit(Integer.parseInt(user_data.get(user_data.size() - 3)), //Credit account number
+                //Create Credit account
+                customer.createCredit(biggestCreditAccountNum + 1, //Credit account number
                         Float.parseFloat(user_data.get(user_data.size() - 2)),//credit account balance
                         Float.parseFloat(user_data.get(user_data.size() -1))); //credit max
 
                 System.out.println("Credit account created");
+                setBiggestCreditAccountNum(customer.getCredit().getAccount_Number()); //set new biggest checking account number
+                System.out.println("Credit account number is now " + customer.getCredit().getAccount_Number());
                 break;
             case "n":
                 System.out.println("Credit account not created");
