@@ -130,7 +130,7 @@ public class RunBank {
             writeToFile.append(inputBuffer.toString());
             writeToFile.close();
         }catch(Exception e){
-            System.out.println("Could not copy the new file");
+            UI.print("Could not copy the new file");
         }
 
         ArrayList<Customer> accounts = read_csv("Input/Bank_Users.csv");
