@@ -3,7 +3,7 @@
  * @since 11/02/2020
  *
  * Class Description:
- * UI helps with the printing in Menu.
+ * UI helps with Displaying a UI in the Menu.
  */
 
 import java.util.Scanner;
@@ -68,6 +68,10 @@ public class UI {
         Scanner sc = new Scanner(System.in);
         System.out.print("> ");
         return sc.nextInt();
+    }
+
+    public static void print(String printMessage){
+        System.out.println(printMessage);
     }
 }
 
