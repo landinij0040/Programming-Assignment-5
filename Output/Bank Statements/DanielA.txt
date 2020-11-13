@@ -1,0 +1,30 @@
+
+BANK STATEMENT
+------------------------
+FirstName:Daniel
+LastName:A
+DOB:"December 5, 1953"
+Identification Number:79
+Address:"500 W. University Ave,  El Paso,  TX 79968"
+PhoneNum:(915) 747-5042
+Email:DanielA@disney.com
+Password:A*Daniel!987
+
+Savings
+Account Number:2078
+Balance:3198.85
+
+Checking
+Account Number:1078
+Balance:1311.17
+
+Credit
+Account Number:3078
+Balance:-186.96
+Credit Max:3938.0
+
+Starting Balances
+Savings Balance:3198.85
+Checkings Balance:1311.17
+Credit Balance:-186.96
+

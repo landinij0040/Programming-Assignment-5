@@ -1,0 +1,48 @@
+
+BANK STATEMENT
+------------------------
+FirstName:Mickey
+LastName:Mouse
+DOB:"July 21, 1941"
+Identification Number:1
+Address:"1313 Disneyland Dr,  Anaheim,  CA 92802"
+PhoneNum:(714) 781-4636
+Email:MickeyMouse@disney.com
+Password:Mouse*Mickey!987
+
+Savings
+Account Number:2000
+Balance:3592.46
+
+Checking
+Account Number:1000
+Balance:3036.2
+
+Credit
+Account Number:3000
+Balance:-832.03
+Credit Max:5122.0
+
+Starting Balances
+Savings Balance:3940.92
+Checkings Balance:2854.17
+Credit Balance:-1132.03
+
+Mickey Mouse Checking pays Donald Duck Checking 100 2020/11/07 23:52:59
+
+Mickey Mouse Savings transfers Mickey Mouse Checking 400 2020/11/07 23:52:59
+
+Mickey Mouse Savings inquires 2020/11/07 23:52:59
+
+Mickey Mouse Checking withdraws 100 2020/11/07 23:52:59
+
+deposits Mickey Mouse Savings 500 2020/11/07 23:53:00
+
+Mickey Mouse Savings transfers Mickey Mouse Credit 300 2020/11/07 23:53:00
+
+Mickey Mouse Savings withdraws 100 2020/11/07 23:53:01
+
+Mickey Mouse Checking pays Roberto Carrasco Checking 17.97 2020/11/07 23:53:02
+
+Mickey Mouse Savings pays David Baptiste Checking 48.46 2020/11/07 23:53:02
+

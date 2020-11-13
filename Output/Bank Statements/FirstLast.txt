@@ -1,0 +1,23 @@
+
+BANK STATEMENT
+------------------------
+FirstName:First
+LastName:Last
+DOB:1234
+Identification Number:12312
+Address:1231231
+PhoneNum:1232131
+Email:2131231
+Password:123123
+
+Savings
+Account Number:2000
+Balance:20000.0
+
+
+
+Starting Balances
+Savings Balance:20000
+Checkings Balance:null
+Credit Balance:null
+
