@@ -146,7 +146,7 @@ public class Menu{
     }
 
     /**
-     * @authior Isaiah Landin
+     * @author Isaiah Landin
      * @param accounts list of customer accounts in bank
      * @return customer inquired about
      */
@@ -278,6 +278,7 @@ public class Menu{
      * @author Isaiah Landin
      * @param oldRow: the row that will be replaced
      * @param newRow: the row that will replace oldRow
+     * @param bankUserCSV: what file to rewrite
      */
     public static void rewriteCSV(String oldRow, String newRow, String bankUserCSV){
         try {
@@ -328,8 +329,8 @@ public class Menu{
      * Returns the account of a user based on the type string value
      * @author Isaiah Landin
      * @param customer: the customer to get the account from
-     * @param type: which type of account <Savings>, <Checking>, <Credit>
-     * @return Account that
+     * @param type: which type of account (Savings, Checking, Credit)
+     * @return Account
      */
     public static Account whatTypeOfAccount(Customer customer, String type){
         if(type.equals("Savings")){           // Return Savings
