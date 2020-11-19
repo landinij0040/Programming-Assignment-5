@@ -1,0 +1,241 @@
+Mickey Mouse Checking pays Donald Duck Checking 100 2020/11/18 14:56:48
+Mickey Mouse Checking pays Donald Duck Checking 100 2020/11/18 14:56:48
+Mickey Mouse Savings transfers Mickey Mouse Checking 400 2020/11/18 14:56:48
+Mickey Mouse Savings inquires 2020/11/18 14:56:48
+Mickey Mouse Checking withdraws 100 2020/11/18 14:56:48
+deposits Mickey Mouse Savings 500 2020/11/18 14:56:48
+Mickey Mouse Savings transfers Mickey Mouse Credit 300 2020/11/18 14:56:48
+deposits Alberto Miranda Checking 5000 2020/11/18 14:56:48
+deposits Alex Avila Checking 5000 2020/11/18 14:56:48
+deposits Alfonso Beltran Checking 5000 2020/11/18 14:56:48
+deposits Alfredo Rodriguez Checking 5000 2020/11/18 14:56:48
+deposits Alyssandra Cordero Checking 5000 2020/11/18 14:56:48
+deposits Anthony Jasso Checking 5000 2020/11/18 14:56:48
+deposits Arae Zarzosa Checking 5000 2020/11/18 14:56:48
+deposits Brandon Bustamante Checking 5000 2020/11/18 14:56:48
+deposits Cesar Cabrera Checking 5000 2020/11/18 14:56:48
+deposits Christopher Reyes Checking 5000 2020/11/18 14:56:48
+deposits Dafne Bencomo Checking 5000 2020/11/18 14:56:48
+deposits David Baptiste Checking 5000 2020/11/18 14:56:48
+deposits Derek Aguirre Checking 5000 2020/11/18 14:56:48
+deposits Eduardo Garcia Checking 5000 2020/11/18 14:56:48
+deposits Ervey Montes Checking 5000 2020/11/18 14:56:48
+deposits Estevan Ramos Checking 5000 2020/11/18 14:56:48
+deposits Federico Marin Checking 5000 2020/11/18 14:56:48
+deposits Gavin Baechle Checking 5000 2020/11/18 14:56:48
+deposits Gildardo Orea Checking 5000 2020/11/18 14:56:48
+deposits Grecia Navarrete Checking 5000 2020/11/18 14:56:48
+deposits Hernan Garcia Checking 5000 2020/11/18 14:56:48
+deposits Isaiah Landin Checking 5000 2020/11/18 14:56:48
+deposits Jose Rodriguez Ortega Checking 5000 2020/11/18 14:56:48
+deposits Joseph Medina - Sandoval Checking 5000 2020/11/18 14:56:48
+deposits Juan Gutierrez Checking 5000 2020/11/18 14:56:48
+deposits Juan Rabelo Checking 5000 2020/11/18 14:56:48
+deposits Judith Garcia Checking 5000 2020/11/18 14:56:48
+deposits Laura Blanco Checking 5000 2020/11/18 14:56:48
+deposits Laurence Labayen Checking 5000 2020/11/18 14:56:48
+deposits Lidice Castro Jimenez Checking 5000 2020/11/18 14:56:48
+deposits Manuel Melendez Lujan Checking 5000 2020/11/18 14:56:48
+deposits Manuel Ruvalcaba Checking 5000 2020/11/18 14:56:48
+deposits Mauricio Ornelas-Gutierrez Checking 5000 2020/11/18 14:56:48
+deposits Minh Dang Checking 5000 2020/11/18 14:56:48
+deposits Oscar Decena Checking 5000 2020/11/18 14:56:48
+deposits Robert Evans Checking 5000 2020/11/18 14:56:48
+deposits Roberto Carrasco Checking 5000 2020/11/18 14:56:48
+deposits Sofia Hernandez Checking 5000 2020/11/18 14:56:48
+deposits Yulianna Torres Checking 5000 2020/11/18 14:56:48
+Alberto Miranda Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alberto Miranda Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alex Avila Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alex Avila Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alfonso Beltran Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alfonso Beltran Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alfredo Rodriguez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alfredo Rodriguez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alyssandra Cordero Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Alyssandra Cordero Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Anthony Jasso Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Anthony Jasso Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Arae Zarzosa Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Arae Zarzosa Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Brandon Bustamante Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Brandon Bustamante Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Cesar Cabrera Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Cesar Cabrera Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Christopher Reyes Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Christopher Reyes Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Dafne Bencomo Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Dafne Bencomo Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+David Baptiste Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+David Baptiste Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Derek Aguirre Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Derek Aguirre Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Eduardo Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Eduardo Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Ervey Montes Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Ervey Montes Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Estevan Ramos Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Estevan Ramos Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Federico Marin Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Federico Marin Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Gavin Baechle Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Gavin Baechle Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Gildardo Orea Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Gildardo Orea Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Grecia Navarrete Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Grecia Navarrete Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Hernan Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Hernan Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Isaiah Landin Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Isaiah Landin Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Jose Rodriguez Ortega Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Jose Rodriguez Ortega Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Joseph Medina - Sandoval Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Joseph Medina - Sandoval Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Juan Gutierrez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Juan Gutierrez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:48
+Juan Rabelo Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Juan Rabelo Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Judith Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Judith Garcia Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Laura Blanco Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Laura Blanco Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Laurence Labayen Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Laurence Labayen Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Lidice Castro Jimenez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Lidice Castro Jimenez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Manuel Melendez Lujan Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Manuel Melendez Lujan Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Manuel Ruvalcaba Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Manuel Ruvalcaba Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Mauricio Ornelas-Gutierrez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Mauricio Ornelas-Gutierrez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Minh Dang Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Minh Dang Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Oscar Decena Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Oscar Decena Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Robert Evans Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Robert Evans Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Roberto Carrasco Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Roberto Carrasco Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Sofia Hernandez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Sofia Hernandez Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Yulianna Torres Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Yulianna Torres Checking pays Daniel Mejia Checking 1000 2020/11/18 14:56:49
+Daniel Mejia Checking inquires 2020/11/18 14:56:49
+Mickey Mouse Savings withdraws 100 2020/11/18 14:56:49
+Donald Duck Checking pays Alberto Miranda Checking 48.46 2020/11/18 14:56:49
+Donald Duck Checking pays Alberto Miranda Checking 48.46 2020/11/18 14:56:49
+Goofy Disney Checking pays Alfonso Beltran Checking 15.63 2020/11/18 14:56:49
+Goofy Disney Checking pays Alfonso Beltran Checking 15.63 2020/11/18 14:56:49
+Pluto Disney Savings withdraws 77 2020/11/18 14:56:49
+Chip Disney Checking pays Alyssandra Cordero Checking 50.99 2020/11/18 14:56:49
+Chip Disney Checking pays Alyssandra Cordero Checking 50.99 2020/11/18 14:56:49
+Dale Disney Savings withdraws 54 2020/11/18 14:56:49
+Cinderella Disney Checking pays Arae Zarzosa Checking 28.81 2020/11/18 14:56:49
+Cinderella Disney Checking pays Arae Zarzosa Checking 28.81 2020/11/18 14:56:49
+Ariel Disney Savings withdraws 57 2020/11/18 14:56:49
+Jasmine Disney Checking pays Cesar Cabrera Checking 28.89 2020/11/18 14:56:49
+Jasmine Disney Checking pays Cesar Cabrera Checking 28.89 2020/11/18 14:56:49
+Aladdin Disney Savings withdraws 94 2020/11/18 14:56:49
+Simba Disney Checking pays Dafne Bencomo Checking 39.29 2020/11/18 14:56:49
+Simba Disney Checking pays Dafne Bencomo Checking 39.29 2020/11/18 14:56:49
+Mufassa Disney Savings withdraws 67 2020/11/18 14:56:49
+Aurora Disney Checking pays Derek Aguirre Checking 34.47 2020/11/18 14:56:49
+Aurora Disney Checking pays Derek Aguirre Checking 34.47 2020/11/18 14:56:49
+Peter Pan Savings withdraws 100 2020/11/18 14:56:49
+Woody Disney Checking pays Ervey Montes Checking 34.04 2020/11/18 14:56:49
+Woody Disney Checking pays Ervey Montes Checking 34.04 2020/11/18 14:56:49
+Buzz Lightyear Savings withdraws 90 2020/11/18 14:56:49
+Jafar Aladdin Checking pays Federico Marin Checking 12.36 2020/11/18 14:56:49
+Jafar Aladdin Checking pays Federico Marin Checking 12.36 2020/11/18 14:56:49
+Ursela Mermaid Savings withdraws 56 2020/11/18 14:56:49
+Beast Disney Checking pays Gildardo Orea Checking 26.84 2020/11/18 14:56:49
+Beast Disney Checking pays Gildardo Orea Checking 26.84 2020/11/18 14:56:49
+Belle Disney Savings withdraws 88 2020/11/18 14:56:49
+Cruella De Vil Checking pays Hernan Garcia Checking 34.7 2020/11/18 14:56:49
+Cruella De Vil Checking pays Hernan Garcia Checking 34.7 2020/11/18 14:56:49
+Scar Lion Savings withdraws 65 2020/11/18 14:56:49
+Simba King Checking pays Jose Rodriguez Ortega Checking 11.31 2020/11/18 14:56:49
+Simba King Checking pays Jose Rodriguez Ortega Checking 11.31 2020/11/18 14:56:49
+Gaston Disney Savings withdraws 78 2020/11/18 14:56:49
+Shere Khan Checking pays Juan Gutierrez Checking 41.2 2020/11/18 14:56:49
+Shere Khan Checking pays Juan Gutierrez Checking 41.2 2020/11/18 14:56:49
+Captaiin Hook Savings withdraws 86 2020/11/18 14:56:49
+Kaa Disney Checking pays Judith Garcia Checking 11.83 2020/11/18 14:56:49
+Kaa Disney Checking pays Judith Garcia Checking 11.83 2020/11/18 14:56:49
+Evil Queen Savings withdraws 86 2020/11/18 14:56:49
+Pinocchio Disney Checking pays Laurence Labayen Checking 34.11 2020/11/18 14:56:49
+Pinocchio Disney Checking pays Laurence Labayen Checking 34.11 2020/11/18 14:56:49
+Prince Eric Savings withdraws 57 2020/11/18 14:56:49
+Quasimodo Disney Checking pays Manuel Melendez Lujan Checking 25.58 2020/11/18 14:56:49
+Quasimodo Disney Checking pays Manuel Melendez Lujan Checking 25.58 2020/11/18 14:56:49
+Hercules Disney Savings withdraws 85 2020/11/18 14:56:49
+Mulan Disney Checking pays Mauricio Ornelas-Gutierrez Checking 36.48 2020/11/18 14:56:49
+Mulan Disney Checking pays Mauricio Ornelas-Gutierrez Checking 36.48 2020/11/18 14:56:49
+Lilo Disney Savings withdraws 59 2020/11/18 14:56:49
+Stitch Disney Checking pays Oscar Decena Checking 29.25 2020/11/18 14:56:49
+Stitch Disney Checking pays Oscar Decena Checking 29.25 2020/11/18 14:56:49
+Gaston Disney Savings withdraws 74 2020/11/18 14:56:49
+Mickey Mouse Checking pays Roberto Carrasco Checking 17.97 2020/11/18 14:56:49
+Mickey Mouse Checking pays Roberto Carrasco Checking 17.97 2020/11/18 14:56:49
+Donald Duck Savings withdraws 91 2020/11/18 14:56:49
+Minnie Mouse Checking pays Yulianna Torres Checking 29.5 2020/11/18 14:56:49
+Minnie Mouse Checking pays Yulianna Torres Checking 29.5 2020/11/18 14:56:49
+Goofy Disney Savings withdraws 81 2020/11/18 14:56:49
+Pluto Disney Checking pays Alex Avila Checking 39.92 2020/11/18 14:56:49
+Pluto Disney Checking pays Alex Avila Checking 39.92 2020/11/18 14:56:49
+Chip Disney Savings withdraws 75 2020/11/18 14:56:49
+Dale Disney Checking pays Alfredo Rodriguez Checking 50.39 2020/11/18 14:56:49
+Dale Disney Checking pays Alfredo Rodriguez Checking 50.39 2020/11/18 14:56:49
+Cinderella Disney Savings withdraws 79 2020/11/18 14:56:49
+Ariel Disney Checking pays Anthony Jasso Checking 46.88 2020/11/18 14:56:49
+Ariel Disney Checking pays Anthony Jasso Checking 46.88 2020/11/18 14:56:49
+Jasmine Disney Savings withdraws 59 2020/11/18 14:56:49
+Aladdin Disney Checking pays Brandon Bustamante Checking 25.16 2020/11/18 14:56:49
+Aladdin Disney Checking pays Brandon Bustamante Checking 25.16 2020/11/18 14:56:49
+Simba Disney Savings withdraws 100 2020/11/18 14:56:49
+Mufassa Disney Checking pays Christopher Reyes Checking 33.54 2020/11/18 14:56:49
+Mufassa Disney Checking pays Christopher Reyes Checking 33.54 2020/11/18 14:56:49
+Mickey Mouse Savings pays David Baptiste Checking 48.46 2020/11/18 14:56:49
+Mickey Mouse Savings pays David Baptiste Checking 48.46 2020/11/18 14:56:49
+Donald Duck Checking withdraws 79 2020/11/18 14:56:49
+Minnie Mouse Savings pays Eduardo Garcia Checking 15.63 2020/11/18 14:56:49
+Minnie Mouse Savings pays Eduardo Garcia Checking 15.63 2020/11/18 14:56:49
+Goofy Disney Checking withdraws 77 2020/11/18 14:56:49
+Pluto Disney Savings pays Estevan Ramos Checking 50.99 2020/11/18 14:56:49
+Pluto Disney Savings pays Estevan Ramos Checking 50.99 2020/11/18 14:56:49
+Chip Disney Checking withdraws 54 2020/11/18 14:56:49
+Dale Disney Savings pays Gavin Baechle Checking 28.81 2020/11/18 14:56:49
+Dale Disney Savings pays Gavin Baechle Checking 28.81 2020/11/18 14:56:49
+Cinderella Disney Checking withdraws 57 2020/11/18 14:56:49
+Ariel Disney Savings pays Grecia Navarrete Checking 28.89 2020/11/18 14:56:49
+Ariel Disney Savings pays Grecia Navarrete Checking 28.89 2020/11/18 14:56:49
+Jasmine Disney Checking withdraws 94 2020/11/18 14:56:49
+Aladdin Disney Savings pays Isaiah Landin Checking 39.29 2020/11/18 14:56:49
+Aladdin Disney Savings pays Isaiah Landin Checking 39.29 2020/11/18 14:56:49
+Simba Disney Checking withdraws 67 2020/11/18 14:56:50
+Mufassa Disney Savings pays Joseph Medina - Sandoval Checking 34.47 2020/11/18 14:56:50
+Mufassa Disney Savings pays Joseph Medina - Sandoval Checking 34.47 2020/11/18 14:56:50
+Aurora Disney Checking withdraws 100 2020/11/18 14:56:50
+Peter Pan Savings pays Juan Rabelo Checking 34.04 2020/11/18 14:56:50
+Peter Pan Savings pays Juan Rabelo Checking 34.04 2020/11/18 14:56:50
+Woody Disney Checking withdraws 90 2020/11/18 14:56:50
+Buzz Lightyear Savings pays Laura Blanco Checking 12.36 2020/11/18 14:56:50
+Buzz Lightyear Savings pays Laura Blanco Checking 12.36 2020/11/18 14:56:50
+Jafar Aladdin Checking withdraws 56 2020/11/18 14:56:50
+Ursela Mermaid Savings pays Lidice Castro Jimenez Checking 26.84 2020/11/18 14:56:50
+Ursela Mermaid Savings pays Lidice Castro Jimenez Checking 26.84 2020/11/18 14:56:50
+Beast Disney Checking withdraws 88 2020/11/18 14:56:50
+Belle Disney Savings pays Manuel Ruvalcaba Checking 34.7 2020/11/18 14:56:50
+Belle Disney Savings pays Manuel Ruvalcaba Checking 34.7 2020/11/18 14:56:50
+Cruella De Vil Checking withdraws 65 2020/11/18 14:56:50
+Scar Lion Savings pays Minh Dang Checking 11.31 2020/11/18 14:56:50
+Scar Lion Savings pays Minh Dang Checking 11.31 2020/11/18 14:56:50
+Simba King Checking withdraws 78 2020/11/18 14:56:50
+Gaston Disney Savings pays Robert Evans Checking 41.2 2020/11/18 14:56:50
+Gaston Disney Savings pays Robert Evans Checking 41.2 2020/11/18 14:56:50
+Shere Khan Checking withdraws 86 2020/11/18 14:56:50
+Captaiin Hook Savings pays Sofia Hernandez Checking 11.83 2020/11/18 14:56:50
+Captaiin Hook Savings pays Sofia Hernandez Checking 11.83 2020/11/18 14:56:50
+Kaa Disney Checking withdraws 86 2020/11/18 14:56:50

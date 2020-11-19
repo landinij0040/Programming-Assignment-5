@@ -174,7 +174,7 @@ public class Menu{
     public void bank_manager_menu(ArrayList<Customer> accounts){
         String Option = "0";
         Customer customer;
-        BankManager bankManager = BankManager.getInstance();
+        BankManager bankManager = BankManager.getInstance();//singleton object
 
         while(!Option.equals("6")) {
             UI.bankManagerMenu();

@@ -100,6 +100,7 @@ public class RunBank {
             e.printStackTrace();
         }
 
+        //Sort by id number
         Collections.sort(accounts, new Customer.sort_by_id());
 
         return accounts;

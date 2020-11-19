@@ -28,21 +28,21 @@ Savings Balance:3940.92
 Checkings Balance:2854.17
 Credit Balance:-1132.03
 
-Mickey Mouse Checking pays Donald Duck Checking 100 2020/11/07 23:52:59
+Mickey Mouse Checking pays Donald Duck Checking 100 2020/11/18 14:56:48
 
-Mickey Mouse Savings transfers Mickey Mouse Checking 400 2020/11/07 23:52:59
+Mickey Mouse Savings transfers Mickey Mouse Checking 400 2020/11/18 14:56:48
 
-Mickey Mouse Savings inquires 2020/11/07 23:52:59
+Mickey Mouse Savings inquires 2020/11/18 14:56:48
 
-Mickey Mouse Checking withdraws 100 2020/11/07 23:52:59
+Mickey Mouse Checking withdraws 100 2020/11/18 14:56:48
 
-deposits Mickey Mouse Savings 500 2020/11/07 23:53:00
+deposits Mickey Mouse Savings 500 2020/11/18 14:56:48
 
-Mickey Mouse Savings transfers Mickey Mouse Credit 300 2020/11/07 23:53:00
+Mickey Mouse Savings transfers Mickey Mouse Credit 300 2020/11/18 14:56:48
 
-Mickey Mouse Savings withdraws 100 2020/11/07 23:53:01
+Mickey Mouse Savings withdraws 100 2020/11/18 14:56:49
 
-Mickey Mouse Checking pays Roberto Carrasco Checking 17.97 2020/11/07 23:53:02
+Mickey Mouse Checking pays Roberto Carrasco Checking 17.97 2020/11/18 14:56:49
 
-Mickey Mouse Savings pays David Baptiste Checking 48.46 2020/11/07 23:53:02
+Mickey Mouse Savings pays David Baptiste Checking 48.46 2020/11/18 14:56:49
 
