@@ -108,6 +108,11 @@ public class BankManager {
         }
     }
 
+    /**
+     * Method that checks that input balance is valid
+     * @param balance balance inputted
+     * @return true if input didn't output any errors
+     */
     public boolean checkBalanceInput(String balance){
         //Check balance isn't empty
         String savingsStartingBalance;
