@@ -108,6 +108,28 @@ public class BankManager {
         }
     }
 
+    public boolean checkBalanceInput(String balance){
+        //Check balance isn't empty
+        String savingsStartingBalance;
+        if (balance.isEmpty()){
+            System.out.println("Starting Balance can't be empty");
+            return false;
+        }
+        //Check balance is a number
+        try{
+            Float.parseFloat(balance);
+        }catch (Exception e){
+            System.out.println("Error input type detected, please put in a number");
+            return false;
+        }
+        //Check balance isn't negative
+        if(Float.parseFloat(balance) < 0){
+            System.out.println("Negative number detected");
+            return false;
+        }
+        return true;
+    }
+
     /**
      * Method that print all the Customer information.
      * @param customer: Personal Info
@@ -207,12 +229,11 @@ public class BankManager {
         System.out.println("Creating Savings account");
         System.out.println("What is the starting Savings Balance?");
         user_data.add(UI.getOption());
-        String savingsStartingBalance;
-        if (user_data.get(user_data.size() - 1).isEmpty()) {
-            System.out.println("Starting Balance can't be empty");
+        //check input is okay
+        if(!checkBalanceInput(user_data.get(user_data.size() - 1))){
             return null;
         }
-        savingsStartingBalance = user_data.get(user_data.size() - 1);
+        String savingsStartingBalance = user_data.get(user_data.size() - 1);
 
         customer = new Customer(user_data.get(0),//first name
                 user_data.get(1),//last name
@@ -238,8 +259,8 @@ public class BankManager {
             case "y":
                 System.out.println("What is the Checking Account starting balance?");
                 user_data.add(UI.getOption());
-                if (user_data.get(user_data.size() - 1).isEmpty()) {
-                    System.out.println("Checking Account balance can't be empty");
+                //check input is okay
+                if(!checkBalanceInput(user_data.get(user_data.size() - 1))){
                     return null;
                 }
                 customer.getBankStatement().setStartingCheckingsBalance(user_data.get(user_data.size() - 1));
@@ -265,15 +286,15 @@ public class BankManager {
             case "y":
                 System.out.println("What is the Credit Account starting balance?");
                 user_data.add(UI.getOption());
-                if (user_data.get(user_data.size() - 1).isEmpty()) {
-                    System.out.println("Credit Account balance can't be empty");
+                //check balance input is okay
+                if(!checkBalanceInput(user_data.get(user_data.size() - 1))){
                     return null;
                 }
                 customer.getBankStatement().setStartingCreditBalance(user_data.get(user_data.size() - 1));
                 System.out.println("What is the max Credit allowed?");
                 user_data.add(UI.getOption());
-                if (user_data.get(user_data.size() - 1).isEmpty()) {
-                    System.out.println("Credit max can't be empty");
+                //check input is okay
+                if(!checkBalanceInput(user_data.get(user_data.size() - 1))){
                     return null;
                 }
                 //Create Credit account
