@@ -1,10 +1,10 @@
 /**
- *
  * Class Description:
  * Account is an abstract class that stores basic account information.
  *
  * Assumptions:
  * 1) All accounts have an account number and a starting balance
+ *
  * @author Yulianna Torres, Judith Garcia, Isaiah Landin
  * @since 11/02/2020
  */
