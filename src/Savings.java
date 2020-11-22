@@ -1,12 +1,11 @@
 /**
- * @author Yulianna Torres, Isaiah Landin, Judith Garcia
- * @since 11/02/2020
- *
  * Class Description: Savings creates a savings account
  *
  * Assumptions:
  * 1) All users must have a savings account.
  * 2) Implements Printable interphase
+ * @author Yulianna Torres, Isaiah Landin, Judith Garcia
+ * @since 11/02/2020
  */
 public class Savings extends Account implements Printable{
 

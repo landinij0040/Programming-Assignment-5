@@ -14,13 +14,6 @@
 import java.util.Comparator;
 
 /**
- * @author Yulianna Torres
- * @version 3.0
- * @author Isaiah Landin
- * @author Judith Garcia
- * @since 11/02/2020
- * @since 11/01/2020
- * @since 10/30/2020
  * <p>
  * Class Description:
  * Customer extends from Person class and stores customer information not already inside of Person class: checking and credit accounts.
@@ -28,6 +21,13 @@ import java.util.Comparator;
  * Assumptions:
  * 1) Users have everything inside of Person class.
  * 2) Not all users have a checking and/or a credit account .
+ * @author Yulianna Torres
+ * @version 3.0
+ * @author Isaiah Landin
+ * @author Judith Garcia
+ * @since 11/02/2020
+ * @since 11/01/2020
+ * @since 10/30/2020
  */
 
 public class Customer extends Person {

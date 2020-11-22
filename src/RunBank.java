@@ -1,9 +1,8 @@
 /**
- * @author Yulianna Torres, Judith Garcia, Isaiah Landin
- * @since 11/02/2020
- *
  * Class Description:
  * RunBank is the main class for the program that calls all other classes.
+ * @author Yulianna Torres, Judith Garcia, Isaiah Landin
+ * @since 11/02/2020
  */
 
 import java.io.*;

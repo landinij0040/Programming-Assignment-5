@@ -3,13 +3,15 @@
  * @since 11/13/2020
  *
  * Class Description:
- * BankManager has all bank manager functionality. Class follows singleton design pattern.
+ * BankManager has all bank manager functionality.
  *
  * Assumptions:
  * 1) Bank manager creates new users
  * 2) Bank manager generates bank statements
  * 3) there is only one bank manager for the whole bank
  * 4) There will never be an account number = 0
+ * @author Yulianna Torres, Isaiah Landin
+ * @since 11/13/2020
  */
 
 import java.io.*;
@@ -21,7 +23,6 @@ public class BankManager {
     private int biggestSavingsAccountNum = 0;
     private int biggestCheckingAccountNum = 0;
     private int biggestCreditAccountNum = 0;
-    private int biggestIDNum = 0;
 
     //Singleton constructor
     /**
@@ -148,6 +149,18 @@ public class BankManager {
             System.out.println("Date of Birth can't be empty");
             return null;
         }
+        System.out.println("Identification Number: (Ex: ##)");
+        user_data.add(UI.getOption());
+        if (user_data.get(user_data.size() - 1).isEmpty()) {
+            System.out.println("Identification Number can't be empty");
+            return null;
+        }
+        try{
+            Integer.parseInt(user_data.get(user_data.size() - 1));
+        }catch (NumberFormatException e ){
+            System.out.println("identification number must be inputted as a number");
+            return null;
+        }
 
         System.out.println("Address: ");
         user_data.add(UI.getOption());
@@ -171,25 +184,6 @@ public class BankManager {
         user_data.add(UI.getOption());
         if (user_data.get(user_data.size() - 1).isEmpty()) {
             System.out.println("Password can't be empty");
-            return null;
-        }
-
-        //-------Generating ID number-----
-        //get max id number
-        //add 1 to id number
-        //assign id number
-        //change id number storage into customer
-
-        System.out.println("Identification Number: (Ex: ##)");
-        user_data.add(UI.getOption());
-        if (user_data.get(user_data.size() - 1).isEmpty()) {
-            System.out.println("Identification Number can't be empty");
-            return null;
-        }
-        try{
-            Integer.parseInt(user_data.get(user_data.size() - 1));
-        }catch (NumberFormatException e ){
-            System.out.println("identification number must be inputted as a number");
             return null;
         }
 

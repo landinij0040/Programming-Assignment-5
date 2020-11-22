@@ -1,12 +1,13 @@
 /**
- * @author Yulianna Torres, Isaiah Landin, Judith Garcia
- * @since 11/02/2020
- *
  * Class Description: Credit creates a credit account
  *
  * Assumptions:
  * 1) not all users must have a credit account.
  * 2) Implements Printable interphase
+ * @author Yulianna Torres, Isaiah Landin, Judith Garcia
+ * @since 11/02/2020
+ *
+ *
  */
 
 public class Credit extends Account implements Printable{

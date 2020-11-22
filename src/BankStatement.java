@@ -1,12 +1,12 @@
 /**
- * @author Yulianna Torres
- * @since 11/09/2020
- *
  * Class Description:
  * BankStatement sets the framework for a bank statement, but gets printed in BankManager class.
  *
  * Assumptions:
  * 1) Bank Manager prints out bank statements
+ * @author Yulianna Torres
+ * @since 11/09/2020
+ *
  */
 
 public class BankStatement {
