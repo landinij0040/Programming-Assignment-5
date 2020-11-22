@@ -120,13 +120,13 @@ public class BankManager {
         System.out.println("Phone number: " + customer.getPhoneNum());
         if(customer.getChecking() != null) {
             System.out.println("Checking Account: " + customer.getChecking().getAccount_Number());
-            //  System.out.println("Checking Balance: " + customer.getChecking().inquire_balance());
+            System.out.println("Checking Balance: " + customer.getChecking().printBalance());
         }
         System.out.println("Savings Account: " + customer.getSavings().getAccount_Number());
-        //System.out.println("Savings Balance: " + customer.getSavings().inquire_balance());
+        System.out.println("Savings Balance: " + customer.getSavings().printBalance());
         if(customer.getCredit() != null) {
             System.out.println("Credit Account: " + customer.getCredit().getAccount_Number());
-            //    System.out.println("Credit Balance: " + customer.getCredit().inquire_balance() + "\n");
+            System.out.println("Credit Balance: " + customer.getCredit().printBalance());
         }
     }
 
