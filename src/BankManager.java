@@ -205,7 +205,6 @@ public class BankManager {
 
         //Create Savings account
         System.out.println("Creating Savings account");
-        Savings savings;
         System.out.println("What is the starting Savings Balance?");
         user_data.add(UI.getOption());
         String savingsStartingBalance;
