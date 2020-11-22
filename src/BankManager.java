@@ -1,7 +1,4 @@
 /**
- * @author Yulianna Torres, Isaiah Landin
- * @since 11/13/2020
- *
  * Class Description:
  * BankManager has all bank manager functionality.
  *
@@ -10,6 +7,7 @@
  * 2) Bank manager generates bank statements
  * 3) there is only one bank manager for the whole bank
  * 4) There will never be an account number = 0
+ *
  * @author Yulianna Torres, Isaiah Landin
  * @since 11/13/2020
  */
