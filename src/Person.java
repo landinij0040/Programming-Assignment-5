@@ -1,12 +1,12 @@
 /**
- * @author Yulianna Torres, Judith Garcia, Isaiah Landin
- * @since 11/02/2020
  *
  * Class Description:
  * Person is an abstract class that stores basic user information.
  *
  * Assumptions:
  * 1) All users must have a first name, last name, date of birth, identification number, address, phone number, email, password, and savings account.
+ * @author Yulianna Torres, Judith Garcia, Isaiah Landin
+ * @since 11/02/2020*
  */
 
 public abstract class Person {

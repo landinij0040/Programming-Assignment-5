@@ -1,9 +1,10 @@
 /**
- * @author Judith Garcia
- * @since 11/02/2020
  *
  * Class Description:
  * UI helps with Displaying a UI in the Menu.
+ * @author Judith Garcia
+ * @since 11/02/2020
+ *
  */
 
 import java.util.Scanner;

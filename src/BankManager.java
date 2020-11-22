@@ -1,19 +1,14 @@
 /**
- * @author Yulianna Torres, Isaiah Landin
- * @since 11/13/2020
- *
  * Class Description:
- * BankManager has all bank manager functionality. Class follows singleton design pattern.
+ * BankManager has all bank manager functionality.
  *
  * Assumptions:
  * 1) Bank manager creates new users
  * 2) Bank manager generates bank statements
  * 3) there is only one bank manager for the whole bank
  * 4) There will never be an account number = 0
- *
- * To do:
- * 1) id number
- * 2) explain
+ * @author Yulianna Torres, Isaiah Landin
+ * @since 11/13/2020
  */
 
 import java.io.*;

@@ -1,12 +1,11 @@
 /**
- * @author Yulianna Torres, Isaiah Landin, Judith Garcia
- * @since 11/02/2020
- *
  * Class Description: Checking creates a checking account
  *
  * Assumptions:
  * 1) not all users must have a checking account.
  * 2) Implements Printable interphase
+ * @author Yulianna Torres, Isaiah Landin, Judith Garcia
+ * @since 11/02/2020
  */
 
 public class Checking extends Account implements Printable {

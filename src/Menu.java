@@ -1,16 +1,16 @@
 /**
- * @author Judith Garcia, Yulianna Torres, Isaiah Landin
- * @since 11/09/2020
- *
- * Class Description:
- * Menu serves as a repository for all menu switch cases presented during RunBank.
- *
  * Assumptions:
  * 1) Transaction action is a separate bank menu option
  * 2) Bank manager creates new users
  * 3) Customer finds account information using email and password
  * 4) Bank manager has option to find accounts by name or account number
  * 5) Money amounts entered will always be a number: entered correctly like in keypad
+ * @author Judith Garcia, Yulianna Torres, Isaiah Landin
+ * @since 11/09/2020
+ *
+ * Class Description:
+ * Menu serves as a repository for all menu switch cases presented during RunBank.
+ *
  */
 
 import java.io.*;
