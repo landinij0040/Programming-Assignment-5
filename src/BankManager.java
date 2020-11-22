@@ -21,6 +21,7 @@ public class BankManager {
     private int biggestSavingsAccountNum = 0;
     private int biggestCheckingAccountNum = 0;
     private int biggestCreditAccountNum = 0;
+    private int biggestIDNum = 0;
 
     //Singleton constructor
     /**
@@ -48,6 +49,10 @@ public class BankManager {
         this.biggestCreditAccountNum = biggestCreditAccountNum;
     }
 
+    public void setBiggestIDNum(int biggestIDNum) {
+        this.biggestIDNum = biggestIDNum;
+    }
+
     public int getBiggestSavingsAccountNum() {
         return biggestSavingsAccountNum;
     }
@@ -60,6 +65,9 @@ public class BankManager {
         return biggestCreditAccountNum;
     }
 
+    public int getBiggestIDNum() {
+        return biggestIDNum;
+    }
 
     //Methods
     /**
@@ -83,6 +91,19 @@ public class BankManager {
                 if (account.getCredit().getAccount_Number() > biggestCreditAccountNum) {
                     setBiggestCreditAccountNum(account.getCredit().getAccount_Number());
                 }
+            }
+        }
+    }
+
+    /**
+     * Method that finds the biggest id number from customers
+     * @param accounts list of accounts in bank system
+     */
+    public void findBiggestIdNum(List<Customer> accounts){
+        //iterate through all accounts to find/set max id num
+        for (Customer customer: accounts) {
+            if(customer.getIdentificationNum() > biggestIDNum){
+                setBiggestIDNum(customer.getIdentificationNum());
             }
         }
     }
@@ -147,18 +168,6 @@ public class BankManager {
             System.out.println("Date of Birth can't be empty");
             return null;
         }
-        System.out.println("Identification Number: (Ex: ##)");
-        user_data.add(UI.getOption());
-        if (user_data.get(user_data.size() - 1).isEmpty()) {
-            System.out.println("Identification Number can't be empty");
-            return null;
-        }
-        try{
-            Integer.parseInt(user_data.get(user_data.size() - 1));
-        }catch (NumberFormatException e ){
-            System.out.println("identification number must be inputted as a number");
-            return null;
-        }
 
         System.out.println("Address: ");
         user_data.add(UI.getOption());
@@ -184,6 +193,11 @@ public class BankManager {
             System.out.println("Password can't be empty");
             return null;
         }
+        //Id number
+        findBiggestIdNum(accounts);
+        int idNum = getBiggestIDNum() + 1;
+        System.out.println("Identification Number Assigned:" + idNum);
+
 
         //-------Generating Accounts---------
         //find/set biggest account numbers
@@ -204,13 +218,13 @@ public class BankManager {
         customer = new Customer(user_data.get(0),//first name
                 user_data.get(1),//last name
                 user_data.get(2),//dob
-                Integer.parseInt(user_data.get(3)),//identification num
-                user_data.get(4),//address
-                user_data.get(5),//phone number
-                user_data.get(6),//email
-                user_data.get(7),//password
-                Float.parseFloat(user_data.get(8)),//Savings balance
-                biggestSavingsAccountNum + 1);//Savings account number
+                idNum,//identification num
+                user_data.get(3),//address
+                user_data.get(4),//phone number
+                user_data.get(5),//email
+                user_data.get(6),//password
+                Float.parseFloat(user_data.get(7)),//Savings balance
+                getBiggestSavingsAccountNum() + 1);//Savings account number
         System.out.println("Savings was created successfully");
         setBiggestSavingsAccountNum(customer.getSavings().getAccount_Number()); //set new biggest savings account number
         System.out.println("Savings account number is now " + customer.getSavings().getAccount_Number());
@@ -231,7 +245,7 @@ public class BankManager {
                 }
                 customer.getBankStatement().setStartingCheckingsBalance(user_data.get(user_data.size() - 1));
                 //Create Checking Account
-                customer.createChecking(biggestCheckingAccountNum + 1, //Checking account number
+                customer.createChecking(getBiggestCheckingAccountNum() + 1, //Checking account number
                                         Float.parseFloat(user_data.get(user_data.size() - 1))); //checking account balance
                 System.out.println("Checking account created");
                 setBiggestCheckingAccountNum(customer.getChecking().getAccount_Number()); //set new biggest checking account number
@@ -264,7 +278,7 @@ public class BankManager {
                     return null;
                 }
                 //Create Credit account
-                customer.createCredit(biggestCreditAccountNum + 1, //Credit account number
+                customer.createCredit(getBiggestCreditAccountNum() + 1, //Credit account number
                         Float.parseFloat(user_data.get(user_data.size() - 2)),//credit account balance
                         Float.parseFloat(user_data.get(user_data.size() -1))); //credit max
 
