@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Normal_UserController"
+            style="-fx-background-color: black;">
+
+    <top>
+        <VBox alignment="CENTER">
+            <TextFlow styleClass="alert, alert-warning" textAlignment="CENTER">
+                <Text fx:id="Title1" text="Welcome " textAlignment="CENTER" styleClass="h2"/>
+                <Text fx:id="Title" text="" textAlignment="CENTER" styleClass="strong, h2"/>
+            </TextFlow>
+        </VBox>
+    </top>
+    <left>
+
+    </left>
+    <right>
+        <VBox fx:id="Tets" alignment="CENTER" spacing="20">
+            <VBox fx:id="NormalUser_ShowBalance" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Inquire Balance" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text text="Select an option" styleClass="h4, text-primary"/>
+                <SplitMenuButton fx:id="options"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                <Text fx:id="NormalUser_Balance" styleClass="p, strong, text-success"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowDeposit" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Deposit Money" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text text="Deposit to:" styleClass="h4, text-primary"/>
+                <SplitMenuButton fx:id="options_deposit"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                <HBox styleClass="-fx-padding: 80 50 0 0">
+                    <Text text = "Amount to deposit: " styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="NormalUser_Amount" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <Button fx:id="NormalUser_Button_Deposit"  text="Deposit" styleClass="btn, btn-primary, p, strong" onAction="#MakeDeposit"></Button>
+                <Text fx:id="NormalUser_Deposit_Message" styleClass="p, strong, text-primary" textAlignment="CENTER"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowWithdraw" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Withdraw Money" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text text="Withdraw from:" styleClass="h4, text-primary"/>
+                <SplitMenuButton fx:id="options_withdraw"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                <HBox styleClass="-fx-padding: 80 50 0 0">
+                    <Text text = "Amount to withdraw: " styleClass="p, strong, text-primary" />
+                    <TextField fx:id="NormalUser_AmountW" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <Button fx:id="NormalUser_Button_Withdraw"  text="Withdraw" styleClass="btn, btn-primary, p, strong" onAction="#WidrawMoney"></Button>
+                <Text fx:id="NormalUser_Withdraw_Message" styleClass="p, strong, text-primary" textAlignment="CENTER"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowTransfer" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Transfer Money" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <HBox styleClass="-fx-padding: 80 0 0 0" spacing="10">
+                    <VBox spacing="10">
+                        <Text text="From:" styleClass="h4, text-primary"/>
+                        <SplitMenuButton fx:id="options_transfer1"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                    <VBox spacing="10">
+                        <Text text="To:" styleClass="h4, text-primary"/>
+                        <SplitMenuButton fx:id="options_transfer"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                </HBox>
+
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="10" alignment="CENTER">
+                    <Text text = "Amount to transfer: " styleClass="p, strong, text-primary" />
+                    <TextField fx:id="NormalUser_AmountT" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <Button fx:id="NormalUser_Button_Transfer"  text="Transfer" styleClass="btn, btn-primary, p, strong" onAction="#TransferMoney"></Button>
+                <Text fx:id="NormalUser_Transfer_Message" styleClass="p, strong, text-primary" textAlignment="CENTER"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowPay" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Pay Someone" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text styleClass="h3, text-primary" text="User to pay"/>
+                <HBox styleClass="-fx-padding: 150 0 0 0" spacing="10">
+                    <VBox spacing="10">
+                        <Text text="Name" styleClass="h4, text-primary"/>
+                        <TextField fx:id="NormalUser_Name" prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                    <VBox spacing="10">
+                        <Text text="Lastname" styleClass="h4, text-primary"/>
+                        <TextField fx:id="NormalUser_Lastname"  prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                </HBox>
+
+                <HBox styleClass="-fx-padding: 80 0 0 0" spacing="10">
+                    <VBox spacing="10">
+                        <Text text="From:" styleClass="h4, text-primary"/>
+                        <SplitMenuButton fx:id="options_pay1"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                    <VBox spacing="10">
+                        <Text text="To:" styleClass="h4, text-primary"/>
+                        <SplitMenuButton fx:id="options_pay"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                    </VBox>
+                </HBox>
+
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="10" alignment="CENTER">
+                    <Text text = "Amount to pay: " styleClass="p, strong, text-primary" />
+                    <TextField fx:id="NormalUser_AmountP" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <Button fx:id="NormalUser_Button_Pay"  text="Pay" styleClass="btn, btn-primary, p, strong" onAction="#PaySomeone"></Button>
+                <Text fx:id="NormalUser_Pay_Message" styleClass="p, strong, text-primary" textAlignment="CENTER"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowChecking" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Create Checking Account" styleClass="h3, strong, text-warning"/>
+                <Text fx:id="NormalUser_Checking_Message" text="" styleClass="h4, strong, text-primary"/>
+            </VBox>
+
+            <VBox fx:id="NormalUser_ShowCredit" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Create Credit Account" styleClass="h3, strong, text-warning"/>
+                <Text fx:id="NormalUser_Credit_Message" text="" styleClass="h4, strong, text-primary"/>
+            </VBox>
+
+        </VBox>
+
+    </right>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Button fx:id="NormalUser_Inquire"  text="Inquire Balance" styleClass="btn, btn-success, p, strong" prefWidth="300" onAction="#ShowInquire"></Button>
+            <Button fx:id="NormalUser_Deposit"  text="Deposit Money" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowDeposit"></Button>
+            <Button fx:id="NormalUser_Withdraw"  text="Withdraw Money" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowWithdraw"></Button>
+            <Button fx:id="NormalUser_Transfer"  text="Transfer Money" styleClass="btn, btn-success, p, strong" prefWidth="300" onAction="#ShowTransfer"></Button>
+            <Button fx:id="NormalUser_Pay"  text="Pay Someone" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowPay"></Button>
+            <Button fx:id="NormalUser_CreateChecking"  text="Create Checking Account" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowChecking"></Button>
+            <Button fx:id="NormalUser_CreateCredit"  text="Create Credit Account" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowCredit"></Button>
+            <Button fx:id="Start_Exit"  text="Exit" styleClass="btn, btn-danger, strong" prefWidth="300" onAction="#Back"></Button>
+        </VBox>
+
+    </center>
+    <bottom>
+
+    </bottom>
+</BorderPane>

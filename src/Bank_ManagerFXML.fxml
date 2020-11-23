@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="BankManagerController"
+            style="-fx-background-color: black;"
+            >
+
+    <top>
+        <VBox alignment="CENTER">
+            <TextFlow styleClass="alert, alert-warning" textAlignment="CENTER">
+                <Text fx:id="Title1" text="Welcome " textAlignment="CENTER" styleClass="h2"/>
+                <Text fx:id="Title" text="Bank Manager!" textAlignment="CENTER" styleClass="strong, h2"/>
+            </TextFlow>
+        </VBox>
+
+    </top>
+    <left>
+
+    </left>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Button fx:id="BankManager_Inquire"  text="Inquire Accounts By Name" styleClass="btn, btn-success, p, strong" prefWidth="300" onAction="#ShowInquire"></Button>
+            <Button fx:id="BankManager_Inquire_Type"  text="Inquire Accounts By Type/Number" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowInquireBy"></Button>
+            <Button fx:id="BankManager_Inquire_All"  text="Inquire All Accounts" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowInquireAllAccounts"></Button>
+            <Button fx:id="BankManager_Create_User"  text="Create User" styleClass="btn, btn-success, p, strong" prefWidth="300" onAction="#ShowCreate"></Button>
+            <Button fx:id="BankManager_Statement"  text="Generate Bank Statement" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#ShowGenerate"></Button>
+            <Button fx:id="BankManager_Exit"  text="Exit" styleClass="btn, btn-danger, strong" prefWidth="300" onAction="#Back"></Button>
+        </VBox>
+    </center>
+    <right>
+        <VBox alignment="CENTER" spacing="20">
+            <VBox fx:id="BankManager_ShowInquire" alignment="CENTER" spacing="20" style="-fx-padding: 0 100 0 0;">
+                <Text text="Inquire Account By Name" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text text="Name of the user:" styleClass="h4, text-primary"/>
+                <TextField fx:id="BankManager_Name" prefWidth="200" minWidth="200" styleClass="-fx-padding: 0 60 0 0" maxWidth="200" />
+                <Button fx:id="BankManager_Inquire_Button" text="Inquire" styleClass="btn, btn-primary, p, strong" onAction="#InquireAccount"></Button>
+                <Text fx:id="BankManager_Found" styleClass="p, strong, text-success"/>
+            </VBox>
+
+            <VBox fx:id="BankManager_ShowInquire_By" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Inquire Account By Type/Number" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="20">
+                    <Text text = "Account Number: " styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Account_Number" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                    <SplitMenuButton fx:id="options"  styleClass="split-menu-btn, split-menu-btn-primary" text="Choose" prefWidth="150" maxWidth="150"/>
+                </HBox>
+                <Button fx:id="BankManager_InquireBy_Button" text="Inquire" styleClass="btn, btn-primary, p, strong" onAction="#InquireAccountId"></Button>
+                <Text fx:id="BankManager_Found2" styleClass="p, strong, text-success"/>
+            </VBox>
+
+            <VBox fx:id="BankManager_ShowAll" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Inquire All Accounts" styleClass="h3, strong, text-warning"/>
+                <Text text="Showing all accounts" styleClass="h4, strong, text-success"/>
+            </VBox>
+
+            <VBox fx:id="BankManager_ShowCreate_User" alignment="CENTER" spacing="10" style="-fx-padding: 0 100 0 0;">
+                <Text text="Create User" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="20">
+                    <Text text = "Name:" styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Create_Name" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                    <Text text = "Lastname: " styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Create_Last" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="10">
+                    <Text text = "Address: " styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Address" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                    <Text text = "Date of birth:" styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_DOB" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="10">
+                    <Text text = "Phone number: " styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Phone" prefWidth="150" minWidth="150" styleClass="-fx-padding: 0 0 60 0" maxWidth="150"/>
+                </HBox>
+                <HBox styleClass="-fx-padding: 80 50 0 0" spacing="20">
+                    <Text text = "Email:" styleClass="p, strong, text-primary"/>
+                    <TextField fx:id="BankManager_Email" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                    <Text text = "Password: " styleClass="p, strong, text-primary"/>
+                    <PasswordField fx:id="BankManager_Password" prefWidth="100" minWidth="100" styleClass="-fx-padding: 0 0 60 0" maxWidth="100"/>
+                </HBox>
+                <Button fx:id="BankManager_Create_Button" text="Create" styleClass="btn, btn-primary, p, strong" onAction="#CreateUser"></Button>
+                <Text fx:id="BankManager_Found4" styleClass="p, strong, text-success"/>
+            </VBox>
+
+            <VBox fx:id="BankManager_ShowGenerate" alignment="CENTER" spacing="20" style="-fx-padding: 0 100 0 0;">
+                <Text text="Generate Bank Statement" styleClass="h3, strong, text-warning"/>
+                <Text text="" styleClass="h4, strong, text-primary"/>
+                <Text text="Name of the user:" styleClass="h4, text-primary"/>
+                <TextField fx:id="BankManager_Name_Generate" prefWidth="200" minWidth="200" styleClass="-fx-padding: 0 60 0 0" maxWidth="200" />
+                <Button fx:id="BankManager_Generate_Button" text="Generate" styleClass="btn, btn-primary, p, strong" onAction="#GenerateBankStatement"></Button>
+                <Text fx:id="BankManager_Found3" styleClass="p, strong, text-success"/>
+            </VBox>
+        </VBox>
+
+
+    </right>
+    <bottom>
+        <GridPane alignment="CENTER" hgap="10.0" vgap="10.0"
+                  xmlns:fx="http://javafx.com/fxml"
+                  fx:id="BankManager_GridPane"
+                  >
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <TableView fx:id="BankManager_TableView" GridPane.columnIndex="0" GridPane.rowIndex="0" prefHeight="200">
+                <columns>
+                    <TableColumn text="First Name" prefWidth="90" fx:id="firstnameColumn">
+                        <cellValueFactory><PropertyValueFactory property="firstName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Last Name" prefWidth="80">
+                        <cellValueFactory><PropertyValueFactory property="lastName" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Phone number" prefWidth="100">
+                        <cellValueFactory><PropertyValueFactory property="phone" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="DOB" prefWidth="60">
+                        <cellValueFactory><PropertyValueFactory property="dob" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="ID number" prefWidth="90" fx:id="identificationColumn">
+                        <cellValueFactory><PropertyValueFactory property="identification" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Address" prefWidth="110">
+                        <cellValueFactory><PropertyValueFactory property="address" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Checking Account" prefWidth="130">
+                        <cellValueFactory><PropertyValueFactory property="checkingAccount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Savings Account" prefWidth="130">
+                        <cellValueFactory><PropertyValueFactory property="savingsAccount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Credit Account" prefWidth="100">
+                        <cellValueFactory><PropertyValueFactory property="creditAccount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Checking Balance" prefWidth="130">
+                        <cellValueFactory><PropertyValueFactory property="checkingBalance" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Savings Balance" prefWidth="130">
+                        <cellValueFactory><PropertyValueFactory property="savingsBalance" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Credit Balance" prefWidth="110">
+                        <cellValueFactory><PropertyValueFactory property="creditBalance" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+                <sortOrder>
+                    <fx:reference source="firstnameColumn"/>
+                </sortOrder>
+            </TableView>
+        </GridPane>
+    </bottom>
+</BorderPane>

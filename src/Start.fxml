@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="StartController"
+            style="-fx-background-color: black;"
+            >
+
+    <top>
+        <VBox alignment="CENTER">
+
+            <TextFlow styleClass="alert, alert-warning" textAlignment="CENTER">
+                <Text fx:id="Title1" text="Welcome to " textAlignment="CENTER" styleClass="h2"/>
+                <Text fx:id="Title" text="Miners Bank!" textAlignment="CENTER" styleClass="strong, h2"/>
+            </TextFlow>
+        </VBox>
+    </top>
+    <left>
+
+    </left>
+    <right>
+
+    </right>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Button fx:id="Start_Normal_User"  text="Normal User" styleClass="btn, btn-success, p, strong" prefWidth="300" onAction="#Normal_menu"></Button>
+            <Button fx:id="Start_Bank_Manager"  text="Bank Manager" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#BankManager_menu"></Button>
+            <Button fx:id="Start_Transaction_Reader"  text="Transaction Reader" styleClass="btn, btn-success, strong" prefWidth="300" onAction="#TransactionReader"></Button>
+            <Text fx:id="Start_Message" text="" styleClass="p, strong, text-success"/>
+            <Button fx:id="Start_Exit"  text="Exit" styleClass="btn, btn-danger, strong" prefWidth="300" onAction="#Close"></Button>
+        </VBox>
+
+    </center>
+    <bottom>
+
+    </bottom>
+</BorderPane>

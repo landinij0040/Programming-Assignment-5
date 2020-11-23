@@ -949,5 +949,415 @@ public class Menu{
         }
     }
 
+
+    // ---------------------------------- Visual ------------------------------------------
+    /**
+     * Inquire Balance
+     * @author Judith Garcia
+     * @param customer: customer to inquire balance from
+     * @param transactionLogDirectory: where to put the transaction log for the whole bank
+     * @param from: what account to inquire balance from
+     */
+    public static float inquireBalanceVisual(Customer customer, String transactionLogDirectory, String from){
+
+        // Finding what type of account it is
+        Account type = whatTypeOfAccount(customer,from);
+        if(type != null) {
+            // Making String to log into User Transaction and Bank Transaction
+            String stringForEverything =
+                    customer.getFirstName() + " " +
+                            customer.getLastName()  + " " +
+                            from +
+                            " inquires";
+            // Logging Transaction
+            log(customer, stringForEverything, transactionLogDirectory );
+            // Showing To user
+            if (type instanceof Checking) {      // Displaying Checking Account
+                return ((Checking) type).printBalance();
+            }
+            if (type instanceof Savings) {       // Displaying Savings Account
+                return ((Savings) type).printBalance();
+            }
+            if (type instanceof Credit) {        // Displaying Credit Account
+                return ((Credit) type).printBalance();
+            }
+        }
+        return 0;
+    }
+
+
+    /**
+     * Method for the Customer to transfer money from an account to another account
+     * @author Judith Garcia
+     * @param customer: The customer that wants to transfer money from different accounts
+     * @param fromWhere: the account to transfer from
+     * @param toWhere: the account to transfer to
+     * @param actionAmount: amount to transfer
+     * @param transactionLogDirectory: directory to log this action to
+     * @param bankUserCSVInput: Input CSV to change
+     * @param bankUserCSVOutput: Output CSV that is changed
+     */
+    public static String transfer_visual(
+            Customer customer,              // Customer that is transferring
+            String fromWhere,
+            String toWhere,
+            String actionAmount,
+            String transactionLogDirectory,  // Where to log into the whole bank log
+            String bankUserCSVInput,         // Input User CSV to UPDATE
+            String bankUserCSVOutput         // Output User CSV that has been updated
+    ) {
+        if (customer == null) {                    // customer was not found
+            return "Customer was not found";
+        }
+        if (Float.parseFloat(actionAmount) < 0) { // action amount is negative
+            return "Can not transfer a negative amount";
+        }
+
+        // Getting accounts to transfer
+        Account fromType = whatTypeOfAccount(customer, fromWhere);
+        Account whereType = whatTypeOfAccount(customer, toWhere);
+
+        if ((fromType != null) && (whereType != null)) { // Has Both accounts
+            if (fromType.get_Balance() >= Double.parseDouble(actionAmount)) {  // action amount is not bigger than from accounts balance
+                if ((whereType instanceof Credit) && ((-1 * whereType.get_Balance()) < Double.parseDouble(actionAmount))) { // if the where account is of type credit and the action amount exceeds the principle
+                    return "Action amount exceeds credit principle.";
+                }
+                // The String to put into the whole bank transaction log and individual account logs
+                String toLog = "";
+                // The String to display the new balance from the account giving
+                String newBalanceFrom = "";
+                // The String to display the new balance from the account receiving
+                String newBalanceWhere = "";
+
+                // The Actual Transfer
+                // Taking amount from the account transferring
+                fromType.set_Balance(fromType.get_Balance() - Float.parseFloat(actionAmount));
+                // Taking amount from the account receiving
+                whereType.set_Balance(whereType.get_Balance() + Float.parseFloat(actionAmount));
+
+                // Giving the to Log a string to log
+
+                toLog = customer.getFirstName() + " " +
+                        customer.getLastName() + " " +
+                        fromWhere + " " +
+                        "transfers" + " " +
+                        customer.getFirstName() + " " +
+                        customer.getLastName() + " " +
+                        toWhere + " " +
+                        actionAmount;
+
+                // Logging the action to the whole bank transactions and the user transaction
+                log(customer, toLog, transactionLogDirectory);
+
+                // Getting row to change
+                String[] gettingRow = getRowById(String.valueOf(customer.getIdentificationNum()), bankUserCSVInput);
+                // Making the old string
+                String oldString = stringArrayToString(gettingRow);
+                // Finding which accounts to update
+                // For the from balance
+                int fromCSV;
+                // Assuming that you can to transfer from the credit account
+                if (fromType instanceof Savings) {
+                    fromCSV = 9;
+                } else {
+                    fromCSV = 8;
+                }
+                // Updating for the CSV
+                gettingRow[fromCSV] = String.valueOf(fromType.get_Balance());
+
+
+                // for the where balance
+                int whereCSV;
+                if (whereType instanceof Savings) {
+                    whereCSV = 8;
+                } else if (whereType instanceof Checking) {
+                    whereCSV = 8;
+                } else {  // whereType instanceof Credit
+                    whereCSV = 11;
+                }
+
+                // updating the csv
+                gettingRow[whereCSV] = String.valueOf(whereType.get_Balance());
+                // putting the row back to a string
+                String newString = stringArrayToString(gettingRow);
+
+                // Finally rewriting the csv file
+                rewriteCSV(oldString, newString, bankUserCSVOutput);
+
+            } else { // action amount is bigger that from accounts balance
+                return "Amount exceeds " + fromWhere;
+            }
+        } else {    // One Or both accounts are missing
+            return "One of the accounts was not found";
+        }
+
+        return "Successful Transfer! \nYou transfer " + actionAmount + "$ from "+ fromWhere + "\nto " + toWhere;
+    }
+
+
+    /**
+     * Method for the customer to deposit money into an account
+     * @author Judith Garcia
+     * @param customer: The customer that wants to deposit money into an account
+     * @param toWhere: the account to deposit to
+     * @param actionAmount: amount to deposit
+     * @param transactionLogDirectory: directory to log this action to
+     * @param inputBankUserCSV: Input CSV to change
+     * @param outputBankUserCSV: Output CSV that is changed
+     */
+    public static String deposit_visual(Customer customer,   // the customer
+                               String toWhere,      // Account customer wants to deposit
+                               String actionAmount, // Amount customer wants to deposit
+                               String transactionLogDirectory, // directory to where all transactions are stored
+                               String inputBankUserCSV,  // Where the input bank users is
+                               String outputBankUserCSV  // Where the output bank users are
+    ) {
+
+        if(Double.parseDouble(actionAmount) < 0){ // If Action amount is negative
+            return "Can not deposit a negative amount";
+        }
+
+        // Finding the account
+        Account type = whatTypeOfAccount(customer, toWhere);
+
+        // If account was not found
+        if(type == null){
+            return "Account not found";
+        }
+
+        // If the count is the credit account and the action amount exceeds the principle
+        if((type instanceof Credit) && (-1 * type.get_Balance() < Float.parseFloat(actionAmount))){
+            return "Amount exceeds Principle";
+        }
+        String toLog = "";
+        String newBalance = "";
+        // Depositing into the account
+        type.set_Balance(type.get_Balance() + Float.parseFloat(actionAmount));
+        toLog = "deposits" +              " " +
+                customer.getFirstName() + " " +
+                customer.getLastName() +  " " +
+                toWhere +                 " " +
+                actionAmount;
+
+        // logging
+        log(customer,toLog, transactionLogDirectory);
+        // Updating CSV
+        String[] gettingRow = getRowById(String.valueOf(customer.getIdentificationNum()), inputBankUserCSV);
+        String oldString = stringArrayToString(gettingRow);
+        // finding which column to update
+        int whereCSV;
+        if(type instanceof Savings){        // Savings
+            whereCSV = 9;
+        }else if(type instanceof Checking){ // Checking
+            whereCSV = 8;
+        }else{                              // Credit
+            whereCSV = 11;
+        }
+
+        gettingRow[whereCSV] = String.valueOf(type.get_Balance());
+        String newString = stringArrayToString(gettingRow);
+
+        // Finally update CSV
+        rewriteCSV(oldString,newString,outputBankUserCSV);
+
+        return "Successful Deposit! \nyou new balance is: " + type.get_Balance() + "!";
+
+    }
+
+
+    /**
+     * Method for the customer to deposit money into an account
+     * @author Judith Garcia
+     * @param customer: The customer that wants to withdraw money from an account
+     * @param fromWhere: the account to withdraw from
+     * @param actionAmount: amount to deposit withdraw from
+     * @param transactionLogDirectory: directory to log this action to
+     * @param inputBankUserCSV: Input CSV to change
+     * @param outputBankUserCSV: Output CSV that is changed
+     */
+    public static String withdraw_visual(Customer customer,   // the customer
+                                String fromWhere,                        // Account customer wants to deposit
+                                String actionAmount,                     // Amount customer wants to withdraw
+                                String transactionLogDirectory,          // directory to where all transactions are stored
+                                String inputBankUserCSV,                 // Where the input bank users is
+                                String outputBankUserCSV                 // Where the output bank users are
+    )
+    {
+
+        if(customer == null){ // Customer is null
+            return "Customer was not found";
+        }
+
+        if(Double.parseDouble(actionAmount) < 0){ // If Action amount is negative
+            return "Can not deposit a negative amount";
+        }
+
+        // Finding the account
+        Account type = whatTypeOfAccount(customer, fromWhere);
+
+        // If account was not found
+        if(type == null){
+            return  "Account is not available";
+        }
+
+        // If Action amount is more than the account
+        if(type.get_Balance() < Double.parseDouble(actionAmount)){
+            return "Amount exceeds account Balance";
+        }
+
+        String toLog = "";
+        String newBalance = "";
+        // Withdrawing from the account
+        type.set_Balance(type.get_Balance() - Float.parseFloat(actionAmount));
+        toLog =
+                customer.getFirstName() + " " +
+                        customer.getLastName() +  " " +
+                        fromWhere +               " withdraws" + " " +
+                        actionAmount;
+
+        // logging
+        log(customer,toLog, transactionLogDirectory);
+        // Updating CSV
+        String[] gettingRow = getRowById(String.valueOf(customer.getIdentificationNum()), inputBankUserCSV);
+        String oldString = stringArrayToString(gettingRow);
+        // finding which column to update
+        int fromCSV;
+        if(type instanceof Savings){       // Savings
+            fromCSV = 8;
+
+        }else{ // Checking
+            fromCSV = 7;
+        }
+
+        gettingRow[fromCSV] = String.valueOf(type.get_Balance());
+        String newString = stringArrayToString(gettingRow);
+
+        // Finally update CSV
+        rewriteCSV(oldString,newString,outputBankUserCSV);
+
+        return "Successful Withdraw! \nyou new balance is: " + type.get_Balance() + "!";
+    }
+
+    /**
+     * Method for the customer to pay another user
+     * @author Judith Garcia
+     * @param customer1: Payer
+     * @param fromWhere: the account to pay from
+     * @param customer2: Payee
+     * @param toWhere: the account to pay to
+     * @param actionAmount: amount to pay
+     * @param allBankDirectoryTrans: directory to log this action to
+     * @param outputCSV: Input CSV to change
+     * @param inputCSV: Output CSV that is changed
+     */
+    public static String pay_visual(Customer customer1,          // The payer
+                           String fromWhere,            // The Account Paying From (Savings or Checking)
+
+                           Customer customer2,          // The payee
+                           String toWhere,              // The Account receiving (Savings or Checking)
+
+                           String actionAmount,         // The Amount to be payed
+
+                           String allBankDirectoryTrans,// Where Transact the payment for the whole system
+
+                           String outputCSV,            // Where the CSV to update is located
+
+                           String inputCSV             // Where the input CSV is located
+    ){
+        // Either Payer or Payee is not a customer
+        if((customer1 == null) || (customer2 == null)){
+            return "Customer not found";
+        }
+
+        // Payer cannot pay themselves
+        if(customer1 == customer2){
+            return "Customer can't pay themselves";
+        }
+        // the action amount is negative
+        if(Double.parseDouble(actionAmount) < 0){
+            return "Can't pay a negative amount";
+        }
+        // getting the respective accounts
+        // getting payer account
+        Account fromType = whatTypeOfAccount(customer1, fromWhere);
+        // getting payee account
+        Account whereType = whatTypeOfAccount(customer2, toWhere);
+
+        if((fromType != null) && (whereType != null)){  // Both accounts were found
+            if(fromType.get_Balance() >= Double.parseDouble(actionAmount)){ // action amount is NOT bigger than payers account
+                // String to log into the customers transaction and whole banks transaction
+                String toLog = "";
+
+                // String to print the new balance for payer
+                String newBalanceForm = "";
+
+                // String to print the new balance for the payee
+                String newBalanceWere = "";
+
+                // The actual payment
+                // taking action amount out or payers account
+                fromType.set_Balance(fromType.get_Balance() - Float.parseFloat(actionAmount));
+                // adding action amount to payee account
+                whereType.set_Balance(whereType.get_Balance() + Float.parseFloat(actionAmount));
+
+                // adding making string to log in the customers transaction and while bank transaction
+                toLog = customer1.getFirstName() + " " +
+                        customer1.getLastName()  + " " +
+                        fromWhere                + " " +
+                        "pays"                   + " " +
+                        customer2.getFirstName() + " " +
+                        customer2.getLastName()  + " " +
+                        toWhere                  + " " +
+                        actionAmount;
+
+                // logging to Customers transactions and the whole bank
+                // logging payers transaction
+                log(customer1, toLog, allBankDirectoryTrans);
+                // logging payees transactions
+                log(customer2, toLog, allBankDirectoryTrans);
+
+                // finding the row to update the csv
+                // old string for payer
+                String[] gotRow1 = getRowById(String.valueOf(customer1.getIdentificationNum()),inputCSV );
+                String oldString1 = stringArrayToString(gotRow1);
+                // old string for payee
+                String[] gotRow2 = getRowById(String.valueOf(customer2.getIdentificationNum()), inputCSV);
+                String oldString2 = stringArrayToString(gotRow2);
+
+                // Which account to update for the payer
+                // Assuming you cannot pay via credit
+                int fromCSV;
+                if (fromType instanceof Savings){
+                    fromCSV = 9;
+                }else{
+                    fromCSV = 8;
+                }
+                gotRow1[fromCSV] = String.valueOf(fromType.get_Balance());
+                String newString1 = stringArrayToString(gotRow1);
+                rewriteCSV(oldString1, newString1, outputCSV);
+
+                // Which account to update for the payee
+                // Assuming you cannot get payed to the credit account
+                int whereCSV;
+                if(whereType instanceof Savings){
+                    whereCSV = 9;
+                }else{
+                    whereCSV = 8;
+                }
+                gotRow2[whereCSV] = String.valueOf(whereType.get_Balance());
+                String newString2 = stringArrayToString(gotRow2);
+                rewriteCSV(oldString2, newString2, outputCSV);
+
+
+            }else{// action amount is bigger than payers account
+                return "Amount exceeds " + fromWhere;
+            }
+
+        }else{ // One or both of the accounts were not found
+            return "One of the accounts was not found";
+        }
+        return "Payment Successful! \nThe amount " + actionAmount + "$ was paid to " + customer2.getIdentificationNum();
+    }
+
 }
 

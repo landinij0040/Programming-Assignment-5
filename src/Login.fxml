@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.PasswordField?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="LoginController"
+            style="-fx-background-color: black;">
+
+    <top>
+        <VBox alignment="CENTER">
+            <TextFlow styleClass="alert, alert-warning" textAlignment="CENTER">
+                <Text fx:id="Title" text="Login!" textAlignment="CENTER" styleClass="strong, h2"/>
+            </TextFlow>
+        </VBox>
+    </top>
+    <left>
+
+    </left>
+    <right>
+
+    </right>
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <Text fx:id="Login_Label_Email" text="Email" styleClass="p, strong, text-danger, h4"/>
+            <TextField fx:id="Login_email" prefWidth="200" minWidth="200" maxWidth="200" text="GreciaNavarrete@disney.com"/>
+
+            <Text fx:id="Login_Label_Password" text="Password" styleClass="p, strong, text-danger, h4"/>
+            <PasswordField fx:id="Login_password" prefWidth="200" minWidth="200" maxWidth="200" text="Navarrete*Grecia!987"/>
+
+            <Button fx:id="Login_SignIn" text="Sign In" maxWidth="100" prefWidth="100" styleClass="btn, btn-success, p, strong" onAction="#Login" />
+            <Text fx:id="Login_Error" text="" styleClass="p, strong, text-danger, h4"/>
+        </VBox>
+
+    </center>
+    <bottom>
+
+    </bottom>
+</BorderPane>
